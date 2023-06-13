@@ -303,3 +303,32 @@ If you want to access the Next.js router, you can do so by importing the useRout
 ## custom 404
 
 To create a custom 404 page, create pages/404.js. This file is statically generated at build time.
+
+## Creating API Routes
+
+- https://nextjs.org/docs/api-routes/introduction
+  API Routes let you create an API endpoint inside a Next.js app. You can do so by creating a function inside the pages/api directory that has the following format:
+- Do Not Fetch an API Route from getStaticProps or getStaticPaths
+- A Good Use Case: Handling Form Input
+
+### use cases
+
+- https://nextjs.org/docs/pages/building-your-application/routing/api-routes#use-cases
+
+```js
+// req = HTTP incoming message, res = HTTP server response
+export default function handler(req, res) {
+  // ...
+}
+```
+
+<!-- eg. put file in pages/api/hello.js -->
+
+Try accessing it at http://localhost:3000/api/hello. You should see {"text":"Hello"}. Note that:
+
+```js
+// pages/api/hello.js
+export default function handler(req, res) {
+  res.status(200).json({ text: 'Hello' });
+}
+```
