@@ -86,3 +86,11 @@ export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
 ```
+
+## Pre-rendering
+
+1. static site generation (pre-render - html generated at build time) - static generation 'with' data / static generation 'without' data
+
+- Static Generation (with Data) using getStaticProps() - tells nextjs you have data dependencies...when pre-rendering page at build, deal with them first.
+
+2. server side rendering (generates html at each request)
